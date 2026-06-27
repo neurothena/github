@@ -20,7 +20,7 @@ resource "github_repository_ruleset" "main_branch" {
 
   rules {
     pull_request {
-      allowed_merge_methods = ["squash"]
+      allowed_merge_methods           = ["squash"]
       required_approving_review_count = 0
     }
     deletion = false
