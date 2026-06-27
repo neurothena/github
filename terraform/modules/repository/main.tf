@@ -12,7 +12,7 @@ terraform {
 
 resource "github_repository" "this" {
   name       = var.name
-  visibility = "public"
+  visibility = var.is_private ? "private" : "public"
 
   gitignore_template = var.gitignore_template
 
@@ -21,10 +21,10 @@ resource "github_repository" "this" {
   has_projects    = false
   has_wiki        = false
 
-  squash_merge_commit_title = "PR_TITLE"
+  squash_merge_commit_title   = "PR_TITLE"
   squash_merge_commit_message = "PR_BODY"
-  merge_commit_title = "PR_TITLE"
-  merge_commit_message = "PR_BODY"
+  merge_commit_title          = "PR_TITLE"
+  merge_commit_message        = "PR_BODY"
 
   auto_init = true
 }
