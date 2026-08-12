@@ -1,7 +1,11 @@
-name: Reusable Docker Build and Push
+name: Docker Build and Push
 
 on:
   workflow_call:
+
+permissions:
+  contents: read
+  packages: write
 
 jobs:
   build-and-push:
